@@ -218,12 +218,14 @@ body {
     }
     input {
         margin-bottom:8px;
+        margin-right: 2px;
         padding-left: 4px;
         height: 30px;
         border-radius: 2px;
         border: solid 1px white;
         background-color: rgba(255, 255, 255, 0.797);
         box-shadow: 0 0 3px rgba(255, 255, 255, 0.799);
+        
     }
     label {
        margin-bottom: 8px;
@@ -234,4 +236,11 @@ body {
     display: none;
     visibility: hidden;
     opacity: 0;
+}
+
+.error {
+    outline: 1px solid rgb(255, 70, 70);
+    // background-color: rgba(255, 0, 0, 0.107) !important;
+    box-shadow: 0 0 6px rgba(243, 5, 5, 0.982) !important;
+
 }

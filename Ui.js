@@ -12,6 +12,9 @@ export class Ui {
     this.monthsInput = null;
     this.yearsInput = null;
 
+    this.nameOfEventInput = null;
+    this.imageLinkInput = null;
+
     this.settingSaveBtn = null;
 
     this.initialize();
@@ -33,6 +36,9 @@ export class Ui {
     this.daysInput = document.querySelector("[data-input-day]");
     this.monthsInput = document.querySelector("[data-input-month]");
     this.yearsInput = document.querySelector("[data-input-year]");
+
+    this.nameOfEventInput = document.querySelector("[data-input-name]");
+    this.imageLinkInput = document.querySelector("[data-input-link]");
 
     this.settingSaveBtn = document.querySelector("[data-settings-save-button]");
   }

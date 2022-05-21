@@ -253,6 +253,7 @@ body {
 
 .wrapper input {
   margin-bottom: 8px;
+  margin-right: 2px;
   padding-left: 4px;
   height: 30px;
   border-radius: 2px;
@@ -272,5 +273,11 @@ body {
   display: none;
   visibility: hidden;
   opacity: 0;
+}
+
+.error {
+  outline: 1px solid #ff4646;
+  -webkit-box-shadow: 0 0 6px rgba(243, 5, 5, 0.982) !important;
+          box-shadow: 0 0 6px rgba(243, 5, 5, 0.982) !important;
 }
 /*# sourceMappingURL=style.css.map */
