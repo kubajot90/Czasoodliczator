@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet"> 
+
+    <script src="https://kit.fontawesome.com/58dc988420.js" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    <!-- <div class="czasoodliczator">CZASOODLICZATOR</div> -->
+    <div class="wrapper">
+        <header class="header">
+            <div class="header__image"></div>
+            <div class="header__settings-btn" data-settings-button><i class="fa-solid fa-sliders"></i></div>
+        </header>
+
+        <main class="display">
+            <h3 class="display__title">Zadanie za 123 dni</h2>
+            <!-- 
+            <div class="display__time display__time-year" data-year>
+                <p class="time__number"></p>
+                <p class="time__signature"></p>
+            </div> -->
+     
+            <div class="display__time display__time-day" >
+                <p class="time__number"data-days>21</p>
+                <p class="time__signature">dni</p>
+            </div>
+
+            <div class="display__time display__time-hour" >
+                <p class="time__number"data-hours>3</p>
+                <p class="time__signature">godziny</p>
+            </div>
+
+            <div class="display__time display__time-minute" >
+                <p class="time__number"data-minutes>16</p>
+                <p class="time__signature">minut</p>
+            </div>
+
+            <div class="display__time display__time-second" >
+                <p class="time__number"data-seconds>23</p>
+                <p class="time__signature">sekund</p>
+            </div>
+
+        </main>
+    
+    <div class="settings hide" data-settings-modal>
+            <h1 class="settings__title">USTAWIENIA</h1>
+       
+            <label for="" class="settings__label-name">Nazwa wydarzenia</label>
+            <input type="text" class="settings__input-event-name" placeholder="Podaj nazwę" data-input-name>
+
+            <!-- <div class="settings__data"> -->
+                <label for="" class="settings__label-day">Dzień</label>
+                <input type="number" class="settings__input-day" placeholder="Dzień" min="1" max="31" data-input-day>
+
+                <label for="" class="settings__label-month">miesiąc</label>
+                <input type="number" class="settings__input-month" placeholder="Miesiąc"  min="1" max="12" data-input-month>
+
+                <label for="" class="settings__label-year">Rok</label>
+                <input type="number" class="settings__input-year" placeholder="Rok"  min="1" max="3000" data-input-year>
+
+            <!-- </div> -->
+
+                <label for="" class="settings__label-link">Link do obrazka</label>
+                <input type="text" class="settings__input-link" placeholder="Wpisz link"  data-input-link>
+
+                <button class="settings__button" data-settings-save-button>Zapisz</button>
+        
+    </div>
+</div>
+    <script src="./script.js" type="module"></script>
+</body>
+</html>
