@@ -9,6 +9,10 @@ class App {
     this.dayInputValue = null;
     this.monthInputValue = null;
     this.yearInputValue = null;
+
+    this.nameOfEventInputValue = null;
+
+    this.isInputOk = true;
   }
   initialize() {
     this.addListeners();
@@ -27,19 +31,26 @@ class App {
     this.monthInputValue = this.ui.monthsInput.value - 1;
     this.yearInputValue = this.ui.yearsInput.value;
 
+    this.nameOfEventInputValue = this.ui.nameOfEventInput.value;
+
     this.checkInputs();
-    this.setDate();
-    this.resetSettingsValue();
-    // window.setTimeout(() => this.toggleClass(this.ui.settingsModal), 1000);
+    if (this.isInputOk) {
+      this.setDate();
+      this.resetSettingsValue();
+    }
   }
 
   setDate() {
     this.time = new Time(
       new Date(this.yearInputValue, this.monthInputValue, this.dayInputValue)
     );
-
     this.drawDate();
+    this.setDisplayTitle();
     window.requestAnimationFrame(() => this.setDate());
+  }
+
+  setDisplayTitle() {
+    this.ui.displayTitle.innerHTML = `${this.nameOfEventInputValue}<span> - ${this.dayInputValue}.${this.monthInputValue}.${this.yearInputValue}</span>`;
   }
 
   drawDate() {
@@ -50,25 +61,24 @@ class App {
   }
 
   resetSettingsValue() {
-    this.ui.nameOfEventInput.value = "";
-    this.ui.imageLinkInput.value = "";
-
-    this.ui.daysInput.value = "";
-    this.ui.monthsInput.value = "";
-    this.ui.yearsInput.value = "";
+    document.querySelectorAll("input").forEach((input) => {
+      input.value = "";
+    });
   }
 
   checkInputs() {
-    this.ui.daysInput.classList.remove("error");
-    this.ui.monthsInput.classList.remove("error");
-    this.ui.yearsInput.classList.remove("error");
+    this.isInputOk = true;
 
-    if (this.dayInputValue === "") {
-      this.ui.daysInput.classList.add("error");
-    } else if (this.monthInputValue === "") {
-      this.ui.monthsInput.classList.add("error");
-    } else if (this.yearInputValue < new Date().getYear()) {
+    document.querySelectorAll(".input").forEach((input) => {
+      input.classList.remove("error");
+      if (input.value === "") {
+        input.classList.add("error");
+        this.isInputOk = false;
+      }
+    });
+    if (this.yearInputValue < new Date().getYear()) {
       this.ui.yearsInput.classList.add("error");
+      this.isInputOk = false;
     }
   }
 

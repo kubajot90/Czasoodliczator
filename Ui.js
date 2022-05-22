@@ -3,6 +3,8 @@ export class Ui {
     this.settingsBtn = null;
     this.settingsModal = null;
 
+    this.displayTitle = null;
+
     this.daysDisplay = null;
     this.hoursDisplay = null;
     this.minutesDisplay = null;
@@ -27,6 +29,8 @@ export class Ui {
   htmlElements() {
     this.settingsBtn = document.querySelector("[data-settings-button]");
     this.settingsModal = document.querySelector("[data-settings-modal]");
+
+    this.displayTitle = document.querySelector("[data-display-title]");
 
     this.daysDisplay = document.querySelector("[data-days]");
     this.hoursDisplay = document.querySelector("[data-hours]");
